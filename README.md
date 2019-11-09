@@ -16,7 +16,8 @@ Progress Log:
 - ```notes```
 
 # Current Status
-- WIP
+- WIP![WIP](WIP.png)
+
  
 
 
