@@ -16,7 +16,7 @@ Progress Log:
 - ```notes```
 
 # Current Status
-<img src="WIP.png" width="30">
+<img src="WIP.png" width="60">
 
  
 
