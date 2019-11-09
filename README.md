@@ -18,7 +18,8 @@ Progress Log:
 # Current Status
 <img src="WIP.png" width="60">
 
- 
+# Other
+- WIP photo courtesy [Shields.io](https://github.com/badges/shields) 
 
 
 
