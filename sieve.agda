@@ -18,3 +18,7 @@
 ---------
 -- LIB --
 ---------
+open import Basics001
+
+five : ℕ
+five = {!   !}
