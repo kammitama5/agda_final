@@ -20,8 +20,8 @@
 ---------
 open import Basics001
 
--- five : ℕ
--- five = {!   !}
+five : ℕ
+five = 5
 
 
 -- tests
@@ -36,8 +36,8 @@ alg = {!   !}
 -- is-prime : ℕ → Set
 -- is-prime n = ∀ m → divides m n → m ≡ n ∨ m ≡ 1
 
--- divides : ℕ → ℕ → Set
--- divides m n = ∃ o ⦂ ℕ ST m × o ≡ n
+divides : ℕ → ℕ → Set
+divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 
 v1 : vec[ 5 ] ℕ
 v1 = [ 2 , 3 , 4 , 5 , 6 ]
