@@ -18,7 +18,10 @@
 ---------
 -- LIB --
 ---------
-open import Basics001
+open import Basics002
+
+_↔_ : Set → Set → Set
+A ↔ B = (A → B) ∧ (B → A)
 
 five : ℕ
 five = 5
@@ -27,17 +30,22 @@ five = 5
 -- tests
 
 -- used in the specification
+
+divides : ℕ → ℕ → Set
+divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
+
+
+
 nums : ∀ (n : ℕ) → vec[ n ] ℕ
 nums = {!   !}
 
 alg : ∀ (n : ℕ) → vec[ n ] 𝔹
 alg = {!   !}
 
--- is-prime : ℕ → Set
--- is-prime n = ∀ m → divides m n → m ≡ n ∨ m ≡ 1
+is-prime : ℕ → Set
+is-prime n = ∀ m → divides m n → m ≡ n ∨ m ≡ 1
 
-divides : ℕ → ℕ → Set
-divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
+
 
 v1 : vec[ 5 ] ℕ
 v1 = [ 2 , 3 , 4 , 5 , 6 ]
@@ -51,5 +59,15 @@ t1 = ↯
 t1′ : nums 5 ≡ v1
 t1′ = ↯
 
--- correctness : ∀ (n : ℕ) (i : idx n) → alg n #[ i ] ≡ I ↔ is-prime (nums #[ i ])
--- correctness n i = ?
+
+correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
+correctness-snd n i = ?
+
+correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
+correctness-cmp n i = ?
+
+correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
+correctness_total n i = ?
+
+correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
+correctness n i = ?
