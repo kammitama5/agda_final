@@ -35,11 +35,12 @@ divides : ℕ → ℕ → Set
 divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 
 
-
+-- takes a value for the length of the n and m
+-- where n is the length of the vector and m is the number from which
+-- the vector starts eg nums 2 3 would return [3, 4]
 nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
-nums Z Z = []
-nums (S n) Z = n ∷ {!   !}
-nums n (S m) = {!   !}
+nums Z m = []
+nums (S n) m = m ∷ {!   !}
 
 alg : ∀ (n : ℕ) → vec[ n ] 𝔹
 alg = {!   !}
