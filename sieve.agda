@@ -40,7 +40,10 @@ divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 -- the vector starts eg nums 2 3 would return [3, 4]
 nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
 nums Z m = []
-nums (S n) m = m ∷ {!   !}
+nums (S n) m = S {!   !} ∷ {!   !}
+
+
+-- nums (S n) m = m ∷ {!   !}
 
 alg : ∀ (n : ℕ) → vec[ n ] 𝔹
 alg = {!   !}
