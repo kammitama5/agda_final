@@ -47,11 +47,11 @@ nums (S n) m = S {!   !} ∷ {!   !}
 -- this returns a list of bools for each value that is a prime
 -- eg alg [2, 3, 4] would return [ true, true, false]
 alg : ∀ (n : ℕ) → vec[ n ] 𝔹
-alg = {!   !}
+alg Z = []
+alg (S n) = {!   !} ∷ {!   !}
 
 is-prime : ℕ → Set
 is-prime n = ∀ m → divides m n → m ≡ n ∨ m ≡ 1
-
 
 
 v1 : vec[ 5 ] ℕ
@@ -69,12 +69,12 @@ t1′ = ↯
 
 -- correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
 -- correctness-snd n i = ?
---
+
 -- correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
 -- correctness-cmp n i = ?
 --
--- correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
--- correctness_total n i = ?
+-- -- correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
+-- -- correctness_total n i = ?
 --
 -- correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
 -- correctness n i = ?
