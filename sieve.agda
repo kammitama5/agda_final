@@ -42,9 +42,10 @@ nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
 nums Z m = []
 nums (S n) m = S {!   !} ∷ {!   !}
 
-
 -- nums (S n) m = m ∷ {!   !}
 
+-- this returns a list of bools for each value that is a prime
+-- eg alg [2, 3, 4] would return [ true, true, false]
 alg : ∀ (n : ℕ) → vec[ n ] 𝔹
 alg = {!   !}
 
