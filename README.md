@@ -6,8 +6,8 @@ Progress Log:
   - setup files, src, etc
 - week 2: define functions needed (11/13 to 11/19)
 - week 3: (11/20 to 11/26)
-- week 4: (11/27 to 12/3)
-- week 5: ?
+- week 4: resolve functions (11/27 to 12/3)
+- week 5: resolve functions, presentation slide do (12/3 to 12/5)
 
 # Requirements
 - Agda v 2.5.4.2
