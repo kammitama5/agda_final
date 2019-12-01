@@ -34,13 +34,16 @@ five = 5
 divides : ℕ → ℕ → Set
 divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 
-
+-- nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
+-- nums 1 4 = 4 ∷ []
 -- takes a value for the length of the n and m
 -- where n is the length of the vector and m is the number from which
 -- the vector starts eg nums 2 3 would return [3, 4]
 nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
 nums Z m = []
-nums (S n) m = S {!   !} ∷ {!   !}
+nums (S n) Z = n ∷ (nums n Z)
+nums (S n) (S m) = 2 ∷ {!   !}
+
 
 -- nums (S n) m = m ∷ {!   !}
 
