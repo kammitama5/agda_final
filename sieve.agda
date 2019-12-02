@@ -70,6 +70,9 @@ alg (S n) m with alg n (S m) | nums n (S m)
 -- the last step, you should bitwise and between RC and rs
 -- for bitwise and, you should write it recursively over two vectors of booleans of the same length
 
+-- bitwise : vec[ n ] 𝔹 → vec[ n ] 𝔹 → vec[ n ] 𝔹 -- not quite right
+-- bitwise = ?
+
 -- considering the vector [ 2 , 3 , 4 ]
 _ : alg 3 2 ≡ [ I , I , O ]
 _ = ↯
