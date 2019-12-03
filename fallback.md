@@ -34,4 +34,12 @@ the problem with a helper function, and wrote some tests.
 - I am also going to try to get a bit of help in class 12/3.
 - We also discussed the bitwise function and the recursive case.
 
+## Checkpoint 1.6.1
+- Worked a bit on my own after meeting with David and added fallback
+file that shows progress of work
+
+## Checkpoint 1.7.1
+- Working in class on test cases and helper function.
+- Also start on prime function
+
 

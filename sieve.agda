@@ -49,6 +49,9 @@ _ = ↯
 _ : nums 2 10 ≡ 10 ∷ 11 ∷ []
 _ = ↯
 
+_ : nums 2 3 ≡ 3 ∷ 4 ∷ []
+_ = ↯
+
 --   nums 2 10
 -- ≡ nums (S n) m
 -- ≡ m ∷ nums n (S m)
@@ -72,6 +75,9 @@ alg (S n) m with alg n (S m) | nums n (S m)
 
 -- bitwise : vec[ n ] 𝔹 → vec[ n ] 𝔹 → vec[ n ] 𝔹 -- not quite right
 -- bitwise = ?
+
+--helper function that takes alg and nums of same size and returns recursive
+-- booleans for all divisible
 
 -- considering the vector [ 2 , 3 , 4 ]
 _ : alg 3 2 ≡ [ I , I , O ]
