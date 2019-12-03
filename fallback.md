@@ -40,6 +40,7 @@ file that shows progress of work
 
 ## Checkpoint 1.7.1
 - Working in class on test cases and helper function.
-- Also start on prime function
-
+- Spoke with David in class (12/3)
+- Work on divides and divmod
+- resolve finding the pi2 function in Agda
 
