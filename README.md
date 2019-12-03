@@ -1,6 +1,9 @@
 # Agda_final
 My Agda final for 295A
 
+# About
+- Set out to prove [the Sieve of Erastothenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) using Agda.
+
 Progress Log:
 - week 1: outline and define project (11/7/19 to 11/12/19)
   - setup files, src, etc
@@ -8,9 +11,10 @@ Progress Log:
 - week 3: (11/20 to 11/26)
 - week 4: resolve functions (11/27 to 12/3)
 - week 5: resolve functions, presentation slide do (12/3 to 12/5)
+- week 5.5: hand in actual write-up and code on 12/6 (Friday) at 11:59pm
 
 # Requirements
-- Agda v 2.5.4.2
+- ``` Agda v 2.5.4.2```
 
 # How to Run
 - ```notes```
