@@ -34,6 +34,14 @@ five = 5
 divides : ℕ → ℕ → Set
 divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 
+-- verify what divides is supposed to do
+
+
+
+-- verify primes
+
+
+
 -- nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
 -- nums 1 4 = 4 ∷ []
 -- takes a value for the length of the n and m
