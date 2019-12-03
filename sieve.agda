@@ -34,6 +34,15 @@ five = 5
 divides : ℕ → ℕ → Set
 divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 
+dividesb : ℕ → ℕ → 𝔹
+dividesb m n = π₂ (divmod m n) ≡ 0
+
+divmod : ℕ → ℕ → ℕ ∧ ℕ
+divmod m n = ?
+
+_ : divmod 4 3 = ⟨1 , 1⟩
+_ = ?
+
 -- verify what divides is supposed to do
 
 
@@ -98,7 +107,7 @@ _ : alg 3 10 ≡ [ I , I , I ]
 _ = ↯
 
 is-prime : ℕ → Set
-is-prime n = ∀ m → divides m n → m ≡ n ∨ m ≡ 1
+is-prime n = ∀ m → m ≤ n → divides m n → m ≡ n ∨ m ≡ 1
 
 
 v1 : vec[ 5 ] ℕ
