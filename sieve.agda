@@ -31,12 +31,15 @@ five = 5
 
 -- used in the specification
 
-divides : ℕ → ℕ → Set
+divides : ℕ → ℕ → Set -- postulate
 divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
 
+-- this takes two natural numbers and returns a tuple of their divmod values
+-- eg dividesb 4 3 = snd (1, 1) = 1 which would return False
 dividesb : ℕ → ℕ → 𝔹
 dividesb m n = π₂ (divmod m n) ≡ 0
 
+-- this takes two numbers and returns divmod divmod 4 3 = (1, 1)
 divmod : ℕ → ℕ → ℕ ∧ ℕ
 divmod m n = ?
 
@@ -106,7 +109,7 @@ _ = ↯
 _ : alg 3 10 ≡ [ I , I , I ]
 _ = ↯
 
-is-prime : ℕ → Set
+is-prime : ℕ → Set -- postulate
 is-prime n = ∀ m → m ≤ n → divides m n → m ≡ n ∨ m ≡ 1
 
 
