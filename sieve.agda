@@ -5,7 +5,7 @@
 -- 1. sieve of eratosthenes
 -- 2. define what is a prime
 -- 3. define what is a composite
--- 4. vector represented sequence returns vector of bools vec[n]
+-- 4. vector represented sequence returns vector of bools vec[n] -- helper (ended up needing)
 -- 5. either prove it terminates or start with postulate
 
 -- 1a. vector should be finite
@@ -40,7 +40,7 @@
 --     for p in range(2, n):
 --         if prime[p]:
 --             print p,
--- 
+--
 -- # driver program (this program uses a finite set, which is taken care of in my defined vector)
 -- if __name__=='__main__':
 --     n = 30 (n is finite in my case)
@@ -59,9 +59,6 @@ A ↔ B = (A → B) ∧ (B → A)
 five : ℕ
 five = 5
 
-
--- tests
-
 -- used in the specification
 
 divides : ℕ → ℕ → Set -- postulate
@@ -77,16 +74,13 @@ divmod : ℕ → ℕ → ℕ ∧ ℕ
 divmod m n = ?
 
 _ : divmod 4 3 = ⟨1 , 1⟩
-_ = ?
+_ = ↯
+
+_ : divmod 4 2 = ⟨2 , 0⟩
+_ = ↯
 
 -- verify what divides is supposed to do
-
-
-
 -- verify primes
-
-
-
 -- nums : ∀ (n : ℕ) → ℕ → vec[ n ] ℕ
 -- nums 1 4 = 4 ∷ []
 -- takes a value for the length of the n and m
@@ -126,8 +120,8 @@ alg (S n) m with alg n (S m) | nums n (S m)
 -- the last step, you should bitwise and between RC and rs
 -- for bitwise and, you should write it recursively over two vectors of booleans of the same length
 
--- bitwise : vec[ n ] 𝔹 → vec[ n ] 𝔹 → vec[ n ] 𝔹 -- not quite right
--- bitwise = ?
+bitwise : vec[ n ] 𝔹 → vec[ n ] 𝔹 → vec[ n ] 𝔹 -- not quite right but bitwise works with num and alg
+bitwise = ?
 
 --helper function that takes alg and nums of same size and returns recursive
 -- booleans for all divisible
@@ -158,15 +152,15 @@ t1 = ↯
 t1′ : nums 5 2 ≡ v1
 t1′ = ↯
 
+-- terminating / correctness
+correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
+correctness-snd n i = ?
 
--- correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
--- correctness-snd n i = ?
+correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
+correctness-cmp n i = ?
 
--- correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
--- correctness-cmp n i = ?
---
--- -- correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
--- -- correctness_total n i = ?
---
--- correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
--- correctness n i = ?
+correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
+correctness_total n i = ?
+
+correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
+correctness n i = ?
