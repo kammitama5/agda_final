@@ -10,7 +10,7 @@ Progress Log:
 - week 2: define functions needed (11/13 to 11/19)
 - week 3: (11/20 to 11/26)
 - week 4: resolve functions (11/27 to 12/3)
-- week 5: resolve functions, presentation slide do (12/3 to 12/5)
+- week 5: resolve functions, presentation is just 2 mins (12/3 to 12/5)
 - week 5.5: hand in actual write-up and code on 12/6 (Friday) at 11:59pm
 
 # Requirements

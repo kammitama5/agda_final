@@ -44,3 +44,8 @@ file that shows progress of work
 - Work on divides and divmod
 - resolve finding the pi2 function in Agda
 
+## Checkpoint 1.8.1
+- ```50%``` is code. It would help to relate ideas in solution to a programming   language people use regularly that looks like English/Math (ie Python or Haskell). Added this. 
+- Tried to resolve pi2. Sadness
+
+
