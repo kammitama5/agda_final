@@ -2,19 +2,52 @@
 -- LOGISTICS --
 ---------------
 --
--- sieve of eratosthenes
--- define what is a prime
--- define what is a composite
--- vector represented sequence returns vector of bools vec[n]
--- either prove it terminates or start with postulate
+-- 1. sieve of eratosthenes
+-- 2. define what is a prime
+-- 3. define what is a composite
+-- 4. vector represented sequence returns vector of bools vec[n]
+-- 5. either prove it terminates or start with postulate
 
--- vector should be finite
--- Prime : N -> Set
--- Prime m = ? (definition)
+-- 1a. vector should be finite
+-- 2a. Prime : N -> Set
+-- 2b. Prime m = ? (definition)
 
--- Soundness
--- Completeness
-
+-- 5a Soundness
+-- 5b Completeness
+-----------------------------------------------------------------
+-- SIEVE IN PYTHON (from Geeks for Geeks)
+-- # Python program to print all primes smaller than or equal to
+-- # n using Sieve of Eratosthenes
+--
+-- def SieveOfEratosthenes(n):
+--
+--     # Create a boolean array "prime[0..n]" and initialize
+--     #  all entries it as true. A value in prime[i] will
+--     # finally be false if i is Not a prime, else true.
+--     prime = [True for i in range(n+1)]
+--     p = 2
+--     while (p * p <= n):
+--
+--         # If prime[p] is not changed, then it is a prime
+--         if (prime[p] == True):
+--
+--             # Update all multiples of p (this is alg)
+--             for i in range(p * p, n+1, p): (this is recursive but needed two vectors)
+--                 prime[i] = False (one is a vector of bools and the other is alg and perform bitwise over them)
+--         p += 1 (recursion takes care of this)
+--
+--     # Print all prime numbers (not used)
+--     for p in range(2, n):
+--         if prime[p]:
+--             print p,
+-- 
+-- # driver program (this program uses a finite set, which is taken care of in my defined vector)
+-- if __name__=='__main__':
+--     n = 30 (n is finite in my case)
+--     print "Following are the prime numbers smaller",
+--     print "than or equal to", n
+--     SieveOfEratosthenes(n)
+---------------------------------------------------------------
 ---------
 -- LIB --
 ---------
@@ -32,7 +65,7 @@ five = 5
 -- used in the specification
 
 divides : ℕ → ℕ → Set -- postulate
-divides m n = ∃ o ⦂ ℕ ST m × o ≡ n -- ∃ is not showing to be in scope
+divides m n = ∃ o ⦂ ℕ ST m × o ≡ n
 
 -- this takes two natural numbers and returns a tuple of their divmod values
 -- eg dividesb 4 3 = snd (1, 1) = 1 which would return False
