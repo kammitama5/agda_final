@@ -14,10 +14,10 @@ Progress Log:
 - week 5.5: hand in actual write-up and code on 12/6 (Friday) at 11:59pm
 
 ## TBD
-- [] recursive case ```divmod```
-- [] recursive case ```alg```
-- [] bitwise 
-- [] brittle parts working together
+- [ ] recursive case ```divmod```
+- [ ] recursive case ```alg```
+- [ ] bitwise 
+- [ ] brittle parts working together
 
 # Requirements
 - ``` Agda v 2.5.4.2```
