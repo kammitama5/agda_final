@@ -16,7 +16,7 @@ Progress Log:
 ## TBD
 - [ ] recursive case ```divmod```
 - [ ] recursive case ```alg```
-- [ ] bitwise 
+- [ ] get ``` bitwise``` together and test to make sure works 
 - [ ] brittle parts working together
 
 # Requirements
