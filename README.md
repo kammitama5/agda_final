@@ -13,6 +13,12 @@ Progress Log:
 - week 5: resolve functions, presentation is just 2 mins (12/3 to 12/5)
 - week 5.5: hand in actual write-up and code on 12/6 (Friday) at 11:59pm
 
+## TBD
+- [] recursive case ```divmod```
+- [] recursive case ```alg```
+- [] bitwise 
+- [] brittle parts working together
+
 # Requirements
 - ``` Agda v 2.5.4.2```
 

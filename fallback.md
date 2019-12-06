@@ -57,5 +57,7 @@ file that shows progress of work
 ## Checkpoint 2.2.1
 - I was stuck on how to resolve the recursive case of divmod
 - I also need help with the RC in Alg.
+- I want to continue working on this and chipping away at it
+
 
 
