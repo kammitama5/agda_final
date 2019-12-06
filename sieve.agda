@@ -64,20 +64,25 @@ five = 5
 divides : ℕ → ℕ → Set -- postulate
 divides m n = ∃ o ⦂ ℕ ST m × o ≡ n
 
+-- this takes two numbers and returns divmod divmod 4 3 = (1, 1)
+-- divmod : ℕ → ℕ → ⟨ℕ ∧ ℕ⟩
+divmod : ℕ → ℕ → ℕ ∧ ℕ
+divmod Z n = ⟨ n , n ⟩
+divmod (S m) n = ⟨ {!   !} , {!  !} ⟩
+
+
+
+_ : divmod 4 3 ≡ ⟨ 1 , 1 ⟩
+_ = ↯
+
+_ : divmod 4 2 ≡ ⟨ 2 , 0 ⟩
+_ = ↯
+
 -- this takes two natural numbers and returns a tuple of their divmod values
 -- eg dividesb 4 3 = snd (1, 1) = 1 which would return False
-dividesb : ℕ → ℕ → 𝔹
-dividesb m n = π₂ (divmod m n) ≡ 0
+-- dividesb : ℕ → ℕ → 𝔹
+-- dividesb m n = π₂ (divmod m n) ≡ 0
 
--- this takes two numbers and returns divmod divmod 4 3 = (1, 1)
-divmod : ℕ → ℕ → ℕ ∧ ℕ
-divmod m n = ?
-
-_ : divmod 4 3 = ⟨1 , 1⟩
-_ = ↯
-
-_ : divmod 4 2 = ⟨2 , 0⟩
-_ = ↯
 
 -- verify what divides is supposed to do
 -- verify primes
@@ -120,47 +125,47 @@ alg (S n) m with alg n (S m) | nums n (S m)
 -- the last step, you should bitwise and between RC and rs
 -- for bitwise and, you should write it recursively over two vectors of booleans of the same length
 
-bitwise : vec[ n ] 𝔹 → vec[ n ] 𝔹 → vec[ n ] 𝔹 -- not quite right but bitwise works with num and alg
-bitwise = ?
+-- bitwise : vec[ n ] 𝔹 → vec[ n ] 𝔹 → vec[ n ] 𝔹 -- not quite right but bitwise works with num and alg
+-- bitwise = ?
 
 --helper function that takes alg and nums of same size and returns recursive
 -- booleans for all divisible
 
 -- considering the vector [ 2 , 3 , 4 ]
-_ : alg 3 2 ≡ [ I , I , O ]
-_ = ↯
-
-_ : alg 2 3 ≡ [ I , I ]
-_ = ↯
-
-_ : alg 3 10 ≡ [ I , I , I ]
-_ = ↯
-
+-- _ : alg 3 2 ≡ [ I , I , O ]
+-- _ = ↯
+--
+-- _ : alg 2 3 ≡ [ I , I ]
+-- _ = ↯
+--
+-- _ : alg 3 10 ≡ [ I , I , I ]
+-- _ = ↯
+--
 is-prime : ℕ → Set -- postulate
 is-prime n = ∀ m → m ≤ n → divides m n → m ≡ n ∨ m ≡ 1
-
-
-v1 : vec[ 5 ] ℕ
-v1 = [ 2 , 3 , 4 , 5 , 6 ]
-
-r1 : vec[ 5 ] 𝔹
-r1 = [ I , I , O , I , O ]
-
-t1 : alg 5 2 ≡ r1
-t1 = ↯
-
-t1′ : nums 5 2 ≡ v1
-t1′ = ↯
+--
+--
+-- v1 : vec[ 5 ] ℕ
+-- v1 = [ 2 , 3 , 4 , 5 , 6 ]
+--
+-- r1 : vec[ 5 ] 𝔹
+-- r1 = [ I , I , O , I , O ]
+--
+-- t1 : alg 5 2 ≡ r1
+-- t1 = ↯
+--
+-- t1′ : nums 5 2 ≡ v1
+-- t1′ = ↯
 
 -- terminating / correctness
-correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
-correctness-snd n i = ?
-
-correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
-correctness-cmp n i = ?
-
-correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
-correctness_total n i = ?
-
-correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
-correctness n i = ?
+-- correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
+-- correctness-snd n i = ?
+--
+-- correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
+-- correctness-cmp n i = ?
+--
+-- correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
+-- correctness_total n i = ?
+--
+-- correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
+-- correctness n i = ?

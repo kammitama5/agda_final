@@ -48,4 +48,10 @@ file that shows progress of work
 - ```50%``` is code. It would help to relate ideas in solution to a programming   language people use regularly that looks like English/Math (ie Python or Haskell). Added this. 
 - Tried to resolve pi2. Sadness
 
+## Checkpoint 1.9.1
+- Worked on defining divmod and div and presenting what I had 
+
+## Checkpoing 2.1.0
+- Worked on divmod, div and bitwise
+
 
