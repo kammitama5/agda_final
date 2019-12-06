@@ -51,7 +51,11 @@ file that shows progress of work
 ## Checkpoint 1.9.1
 - Worked on defining divmod and div and presenting what I had 
 
-## Checkpoing 2.1.0
+## Checkpoint 2.1.0
 - Worked on divmod, div and bitwise
+
+## Checkpoint 2.2.1
+- I was stuck on how to resolve the recursive case of divmod
+- I also need help with the RC in Alg.
 
 

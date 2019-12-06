@@ -68,7 +68,8 @@ divides m n = ∃ o ⦂ ℕ ST m × o ≡ n
 -- divmod : ℕ → ℕ → ⟨ℕ ∧ ℕ⟩
 divmod : ℕ → ℕ → ℕ ∧ ℕ
 divmod Z n = ⟨ n , n ⟩
-divmod (S m) n = ⟨ {!   !} , {!  !} ⟩
+divmod (S m) n with divmod m n
+... | IH  = ⟨ {!  !} , {!  !} ⟩ -- I got stuck here but I really want to solve this!
 
 
 
@@ -80,8 +81,8 @@ _ = ↯
 
 -- this takes two natural numbers and returns a tuple of their divmod values
 -- eg dividesb 4 3 = snd (1, 1) = 1 which would return False
--- dividesb : ℕ → ℕ → 𝔹
--- dividesb m n = π₂ (divmod m n) ≡ 0
+dividesb : ℕ → ℕ → 𝔹
+dividesb m n = π₂ (divmod m n) ≡ 0
 
 
 -- verify what divides is supposed to do
@@ -116,7 +117,7 @@ _ = ↯
 alg : ∀ (n : ℕ) → ℕ → vec[ n ] 𝔹
 alg Z m = []
 alg (S n) m with alg n (S m) | nums n (S m)
-... | RC | ns = I ∷ {! RC  !}
+... | RC | ns = I ∷ {! RC  !} -- I need help with this!
 -- in example below, RC = [ I , I ]
 -- in example below, ns = [ 3 , 4 ]
 -- what you want is rs = [ I , O ]
@@ -132,40 +133,41 @@ alg (S n) m with alg n (S m) | nums n (S m)
 -- booleans for all divisible
 
 -- considering the vector [ 2 , 3 , 4 ]
--- _ : alg 3 2 ≡ [ I , I , O ]
--- _ = ↯
---
--- _ : alg 2 3 ≡ [ I , I ]
--- _ = ↯
---
--- _ : alg 3 10 ≡ [ I , I , I ]
--- _ = ↯
+_ : alg 3 2 ≡ [ I , I , O ]
+_ = ↯
+
+_ : alg 2 3 ≡ [ I , I ]
+_ = ↯
+
+_ : alg 3 10 ≡ [ I , I , I ]
+_ = ↯
 --
 is-prime : ℕ → Set -- postulate
 is-prime n = ∀ m → m ≤ n → divides m n → m ≡ n ∨ m ≡ 1
 --
 --
--- v1 : vec[ 5 ] ℕ
--- v1 = [ 2 , 3 , 4 , 5 , 6 ]
---
--- r1 : vec[ 5 ] 𝔹
--- r1 = [ I , I , O , I , O ]
---
--- t1 : alg 5 2 ≡ r1
--- t1 = ↯
---
--- t1′ : nums 5 2 ≡ v1
--- t1′ = ↯
+v1 : vec[ 5 ] ℕ
+v1 = [ 2 , 3 , 4 , 5 , 6 ]
+
+r1 : vec[ 5 ] 𝔹
+r1 = [ I , I , O , I , O ]
+
+t1 : alg 5 2 ≡ r1
+t1 = ↯
+
+t1′ : nums 5 2 ≡ v1
+t1′ = ↯
 
 -- terminating / correctness
--- correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
--- correctness-snd n i = ?
---
--- correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
--- correctness-cmp n i = ?
---
--- correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
--- correctness_total n i = ?
---
--- correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
--- correctness n i = ?
+-- {#- TERMINATING -#}
+correctness-snd : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) → is-prime (nums #[ i ])
+correctness-snd n i = ?
+
+correctness-cmp : ∀ (n : ℕ) (i : idx n) → is-prime (nums #[ i ]) → (alg n #[ i ] ≡ I)
+correctness-cmp n i = ?
+
+correctness_total : ∀ (n : ℕ) (i : idx n) → correctness-snd  ↔ correctness-cmp
+correctness_total n i = ?
+
+correctness : ∀ (n : ℕ) (i : idx n) → (alg n #[ i ] ≡ I) ↔ is-prime (nums #[ i ])
+correctness n i = ?
